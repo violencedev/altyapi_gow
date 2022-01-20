@@ -4,7 +4,7 @@ local defLines = 20
 
 local pos = {sS[1]/2, sS[2] - 30}
 
-local font = dxCreateFont("roboto.ttf", 9) -- Height : 15
+local font = exports.fonts:getFont("Roboto",9)
 
 debugTable = {}
 
@@ -30,24 +30,18 @@ local maxRow = 10
 
 function renderDebug()
     if not debug then return end
-    -- dxDrawRectangle(pos[1] - 425, pos[2] - 15 * maxRow - 5, 850, 15 * maxRow + 15, tocolor(0, 0, 0, 150), false)
     latestRow = currentRow+maxRow-1
     for k, v in ipairs(debugTable) do
         if k >= currentRow and k <= latestRow then
             k = k - currentRow + 1
             if v[3] > 1 and v[4] then
-             --   dxDrawText(v[1] .. " [Dup #ad1503x" .. v[3] .. "#ffffff - Kliens Oldal]", pos[1], pos[2] - 16 * (k - 1), pos[1], pos[2] - 16 * (k - 1), tocolor(255, 255, 255, 255), 1, font, "center", "center", _, _, true, true)
-                dxDrawText(v[1] .. " [Kopya #FFA4E3" .. v[3] .. "#ffffff - Hata]", pos[1], pos[2] - 16 * (k - 1), pos[1], pos[2] - 16 * (k - 1), tocolor(255, 255, 255, 255), 1, font, "center", "center", _, _, true, true)
-                --shadowedText(v[1] .. " [Dup x" .. v[3] .. " - Kliens Oldal]", pos[1], pos[2] - 16 * (k - 1), pos[1], pos[2] - 16 * (k - 1), tocolor(0, 0, 0, 255), 1, font, "center", "center"))
+                dxDrawText(v[1] .. " [Kopya #FFA4E3" .. v[3] .. "#ffffff - Hata]", pos[1], pos[2] - 16 * (k - 1), pos[1], pos[2] - 16 * (k - 1), tocolor(255, 255, 255, 255), 1, font, "center", "center", _, _, true, true)  
             elseif v[4] then
                 dxDrawText(v[1] .. " [Hata kapandı.]", pos[1], pos[2] - 16 * (k - 1), pos[1], pos[2] - 16 * (k - 1), tocolor(255, 255, 255, 255), 1, font, "center", "center", _, _, true, true)
-               --shadowedText(v[1] .. " [Kliens Oldal]", pos[1], pos[2] - 16 * (k - 1), pos[1], pos[2] - 16 * (k - 1), tocolor(0, 0, 0, 0), 1, font, "center", "center",false,false,false,false,false))
             elseif v[3] > 1 then
                 dxDrawText(v[1] .. " [Kopya #FFA4E3" .. v[3] .. "#ffffff]", pos[1], pos[2] - 16 * (k - 1), pos[1], pos[2] - 16 * (k - 1), tocolor(255, 255, 255, 255), 1, font, "center", "center", _, _, true, true)
-               -- shadowedText(v[1] .. " [Dup #ad1503x" .. v[3] .. "#ffffff]", pos[1], pos[2] - 16 * (k - 1), pos[1], pos[2] - 16 * (k - 1), tocolor(0, 0, 0, 255), 1, font, "center", "center",false,false,false,false,false))
             else
                 dxDrawText(v[1], pos[1], pos[2] - 16 * (k - 1), pos[1], pos[2] - 16 * (k - 1), tocolor(255, 255, 255, 255), 1, font, "center", "center", _, _, true, true)
-              --  shadowedText(v[1], pos[1], pos[2] - 16 * (k - 1), pos[1], pos[2] - 16 * (k - 1), tocolor(0, 0, 0, 255), 1, font, "center", "center",false,false,false,false,false))
             end
         end
     end
