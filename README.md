@@ -6,4 +6,6 @@
  Dipnot: OWL kullanan pussydir.
  
  • arsenic olarak pervysage'ye çok saygıda duyuyorum.
+ 
+ 
  • Clipperton olarak pervysage'ye çok saygıda duyuyorum.
