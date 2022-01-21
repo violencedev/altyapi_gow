@@ -121,6 +121,7 @@ function roundedRectangle(x, y, w, h, borderColor, bgColor, postGUI)
 end
 
 
+
 function isEventHandlerAdded( sEventName, pElementAttachedTo, func )
 	if type( sEventName ) == 'string' and isElement( pElementAttachedTo ) and type( func ) == 'function' then
 	    local aAttachedFunctions = getEventHandlers( sEventName, pElementAttachedTo )

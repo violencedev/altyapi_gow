@@ -40,3 +40,8 @@ addEventHandler('onClientClick', root, function(btn, st)
 	end
 end)
 
+addEvent('stop:Music', true)
+addEventHandler('stop:Music', root, function()
+    local musicInfo = getElementData(localPlayer, 'current:Music')
+    stopSound(musicInfo.object)
+end)
