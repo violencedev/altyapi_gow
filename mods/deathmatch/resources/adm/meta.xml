@@ -1,0 +1,6 @@
+<meta>
+<info name="admScript" author="gowMTA Scripting Team"/>
+
+<script src="superfly/client.lua" type="client"/>
+<script src="superfly/server.lua" type="server"/>
+</meta>
