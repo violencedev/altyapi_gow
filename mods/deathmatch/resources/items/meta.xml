@@ -1,0 +1,16 @@
+<meta>
+    <info name="itemSystemScript" author="gowMTA Scripting Team"/>
+    <oop>true</oop>
+
+    <script src="back-end/items_main.lua" type="server"/>
+
+    <file src="back-end/items_pics/1.png"/>
+    <file src="back-end/items_pics/2.png"/>
+    <file src="back-end/items_pics/3.png"/>
+    <file src="back-end/items_pics/4.png"/>
+    <file src="back-end/items_pics/8.png"/>
+    <file src="back-end/items_pics/12.png"/>
+    <file src="back-end/items_pics/13.png"/>
+    <file src="back-end/items_pics/17.png"/>
+    <file src="back-end/items_pics/18.png"/>
+</meta>
