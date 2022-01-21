@@ -1,0 +1,6 @@
+﻿<meta>
+ <script src="Code.lua" type="client"/>
+ <script src="Assigments.lua" type="server"/>
+</meta>
+
+ 
