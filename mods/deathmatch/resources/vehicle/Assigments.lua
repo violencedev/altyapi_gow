@@ -54,20 +54,10 @@ addEventHandler('onResourceStart', resourceRoot, function()
     dbQuery(function(qh)
         local results = dbPoll(qh, -1)
         for index, key in pairs(results) do 
-		 local id = key.id
-		 local model = key.model
-		 local x = key.x
-		 local y = key.y
-		 local z = key.z
-		 local owner = key.owner
-		 local plaka = key.plaka
-		 local r = key.r
-		 local g = key.g
-		 local b = key.b
-         local vehicle = createVehicle(model, x+2, y+1, z+1, 0, 0, r, plaka)
-		 setElementData(vehicle, "sahip", owner)
-		 setElementData(vehicle, "id", id)
-		 setVehicleColor(vehicle, r, g, b)
+         local vehicle = createVehicle(key.model, key.x+2, key.y+1, key.z+1, 0, 0, key.r, key.plaka)
+		 setElementData(vehicle, "sahip", key.owner)
+		 setElementData(vehicle, "id", key.id)
+		 setVehicleColor(vehicle, key.r, key.g, key.b)
         end 
     end, db, 'SELECT * FROM araclar ORDER BY id')
 end)
