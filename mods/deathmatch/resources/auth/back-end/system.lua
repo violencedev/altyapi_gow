@@ -171,7 +171,8 @@ addEventHandler('call:ServerMusic', root, shuffleSounds)
 
 function createCharacterAttempt(charName, weight, height, age, irk, sex, skinid)
     weight, height, age = tonumber(weight), tonumber(height), tonumber(age)
-    if not split(charName, '_') then return outputChatBox('İsimler arasında alt cizgi bulunmali.', client, 255, 0, 0) end 
+	local splitted = string.match(charName, "_")
+    if not splitted then return outputChatBox('İsimler arasında alt cizgi bulunmali.', client, 255, 0, 0) end 
     if isExists(charName) == true then  return outputChatBox('Boyle bir karakter mevcut.', client, 255, 0, 0) end
     if not tonumber(weight) or not tonumber(height) or not tonumber(age) then return outputChatBox('İfadelerde yazim hataniz mevcut.', client, 255, 0, 0) end
     if (((age < 15) or (age > 100)) or ((weight < 40) or (weight > 140)) or ((height < 150) or (height > 205))) then return outputChatBox('Birim degerlerinde mantik hatasi mevcut.', client, 255, 0, 0) end 
@@ -253,8 +254,8 @@ addEventHandler('redirect:EnterChar', root, function(char)
     setCameraTarget(client, client)
     showCursor(client, false)
     showChat(client, true)
-    setPlayerName(client, char.charName)
     if getElementData(client, 'ped:') then destroyElement(getElementData(client, 'ped:')) end
+    setPlayerName(client, tostring(char["charName"]))
     setElementModel(client, tonumber(char.skinid))
     setElementData(client, 'charSettings', {
         name = char.charName, 
@@ -265,7 +266,8 @@ addEventHandler('redirect:EnterChar', root, function(char)
         sex = char.sex, 
         skinid = char.skinid
     })
-    setElementData(client, 'money', char.money)
+	setElementData(client, 'money', char.money)
     getID(client, charName)
     triggerClientEvent('stop:Music', client)
 end)
+
