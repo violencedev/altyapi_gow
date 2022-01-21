@@ -43,5 +43,5 @@ end)
 addEvent('stop:Music', true)
 addEventHandler('stop:Music', root, function()
     local musicInfo = getElementData(localPlayer, 'current:Music')
-    if MusicInfo.object then stopSound(musicInfo.object) end
+    if musicInfo.object then stopSound(musicInfo.object) setElementData(localPlayer, "current:Music", nil) end
 end)
