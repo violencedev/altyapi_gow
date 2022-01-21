@@ -33,12 +33,12 @@ function panel()
 
 	if karakterler[1] then
 		for k,v in pairs(karakterler) do 
-			roundedRectangle(x,y-130 + (k * 100),w,h,tocolor(17,17,17,alpkha2),10) -- 1.karakter rounded
-			dxDrawText(v.charName,x+13,y-122 + (k * 100) ,w,h,tocolor(200,200,200,alpkha2),1,robotomed) -- 1. karakter adı
-			dxDrawText(getZoneName(v.x, v.y, v.z),x+170,y-122 + (k * 100),w,h,tocolor(200,200,200,alpkha2),1,robotomed) -- 1. karakter son görülme yeri
-			dxDrawText(determineSex(v.sex),x+347,y-123 + (k * 100),w,h,tocolor(200,200,200,alpkha2),1,awesome) -- 1. karakter cinsiyet iconlu
-			dxDrawText(playicon,x+460,y-24,w,h,tocolor(200,200,200,alpkha2),1,awesome) -- 1. karakter oyna icon
-			table.insert(playIcons, {pos={x+460,y-24,w,h}, char=v})
+			roundedRectangle(x,y-130 + (k * 40)+50,w,h,tocolor(17,17,17,alpkha2),10) -- 1.karakter rounded
+			dxDrawText(v.charName,x+13,y-122 + (k * 40)+50 ,w,h,tocolor(200,200,200,alpkha2),1,robotomed) -- 1. karakter adı
+			dxDrawText(getZoneName(v.x, v.y, v.z),x+170,y-122 + (k * 40)+50,w,h,tocolor(200,200,200,alpkha2),1,robotomed) -- 1. karakter son görülme yeri
+			dxDrawText(determineSex(v.sex),x+347,y-123 + (k * 40)+50,w,h,tocolor(200,200,200,alpkha2),1,awesome) -- 1. karakter cinsiyet iconlu
+			dxDrawText(playicon,x+460,y-24+(k*40)-50,w,h,tocolor(200,200,200,alpkha2),1,awesome) -- 1. karakter oyna icon(non hovered)
+			table.insert(playIcons, {pos={x+460,y-24 + (k*40)-50,w,h}, char=v})
 		end 
 	else
 		roundedRectangle(x,y-30,w,h,tocolor(17,17,17,alpkha2),10) 
@@ -70,9 +70,9 @@ function character()
 			dxDrawText("Karakter Oluştur",scx+360,scy-22,w,h,tocolor(220,0,0),1,robotomed) -- karakter oluştur text
 		end
 
-		for k,v in pairs(playIcons) do 
-			if isCursorOnElement(x+460,y-124 + (k * 100),20,20) then 
-				dxDrawText(playicon,x+460,y-24,w,h,tocolor(0,200,0,200),1,awesome) -- 1. karakter oyna icon
+		for k,v in pairs(karakterler) do 
+			if isCursorOnElement(x+460,y-24 + (k * 40)-50,20,20) then 
+				dxDrawText(playicon,x+460,y-24+(k * 40)-50,w,h,tocolor(0,200,0,200),1,awesome) -- 1. karakter oyna icon
 			end
 		end 
 end
