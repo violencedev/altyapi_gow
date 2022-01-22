@@ -1,0 +1,5 @@
+<meta>
+    <info name="OOC-IC chatSystem" author="gowMTA Scripting Team"/>
+    <script src="backend.lua" type="server"/>
+    <script src="code.lua" type="client"/>
+</meta>
