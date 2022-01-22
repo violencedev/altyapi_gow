@@ -1,0 +1,11 @@
+function positionPlayer(thePlayer)
+    local x,y,z = getElementPosition(thePlayer)
+    local rx,ry,rz = getElementRotation(thePlayer)
+    local int = getElementInterior(thePlayer)
+    local dim = getElementDimension(thePlayer)
+    outputChatBox("position: "..x.." "..y.. " " ..z,thePlayer,220,0,0)
+    outputChatBox("rotation: "..rz,thePlayer,220,0,0) 
+    outputChatBox("interior: "..int,thePlayer,220,0,0)
+    outputChatBox("dimension: "..dim,thePlayer,220,0,0)
+end
+addCommandHandler("getpos",positionPlayer)
