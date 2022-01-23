@@ -1,6 +1,8 @@
 ﻿<meta>
+ <info description="Vehicle system for gowMTA resources" author="gowMTA Development Team & Project Developer pervysage"/>
  <script src="Code.lua" type="client"/>
  <script src="Assigments.lua" type="server"/>
+ <script src="fuel_c.lua" type="client"/>
 </meta>
 
  
