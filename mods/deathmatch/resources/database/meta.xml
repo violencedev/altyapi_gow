@@ -1,5 +1,0 @@
-<meta>
-    <info name="databaseScript" author="gowMTA Scripting Team"/>
-    <script src="connection.lua" type="server"/>
-    <export function="getConn" type="server"/>
-</meta>

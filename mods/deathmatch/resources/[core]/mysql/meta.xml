@@ -1,0 +1,7 @@
+<meta>
+    <info author="viosenic" name="mysql"/>
+
+    <script src="connection.lua" type="server"/>
+
+    <export function="getConn" type="server"/>
+</meta>

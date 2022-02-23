@@ -1,0 +1,7 @@
+<meta>
+    <info author="viosenic" name="starter"/>
+
+    <script src="starter.lua" type="server"/>
+
+    <export function="findIndex" type="server"/>
+</meta>

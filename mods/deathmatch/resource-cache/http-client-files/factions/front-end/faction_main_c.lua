@@ -10,7 +10,7 @@ local fontawesome = exports.fonts:getFont("FontAwesome",19)
 local fontroboto = exports.fonts:getFont("Roboto",10)
 
 
-
+factionGuys = {}
 
 -- Useful guy
 
@@ -91,10 +91,17 @@ function factionSystem()
 
 	roundedRectangle(x+7,y+55,202,215,tocolor(24,24,24))
 	for _,g in pairs(getPlayersInTeam(teamVar)) do 
+		local userRank = (teamSettings.birlikRutbeleri)[tonumber(g:getData('rank'))]
 		dxDrawText("",x+12,y+57,w,h,tocolor(220,220,220,220),0.60,fontawesome)
 		dxDrawRectangle(x+7,y+80,202,1,tocolor(0,0,0))
 		dxDrawText(getPlayerName(g) .. "  | ",x+33,y+60,w,h,tocolor(220,220,220,220),1,fontroboto)
-		dxDrawText(" " .. player_Rank,x+127,y+60,w,h,tocolor(220,220,220,220),1,fontroboto)
+		dxDrawText(" " .. userRank,x+127,y+60,w,h,tocolor(220,220,220,220),1,fontroboto)
+
+		table.insert(factionGuys, {
+			name = getPlayerName(g),
+			rank = userRank,
+			state = 'Üye'
+		})
 	end 
 
 	dxDrawText(factionname,x+5,y,w,h,tocolor(220,220,220,220),1,fontazzardo) -- birlik adı

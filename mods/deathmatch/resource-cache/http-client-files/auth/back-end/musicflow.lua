@@ -43,5 +43,12 @@ end)
 addEvent('stop:Music', true)
 addEventHandler('stop:Music', root, function()
     local musicInfo = getElementData(localPlayer, 'current:Music')
-    stopSound(musicInfo.object)
+    if MusicInfo.object then stopSound(musicInfo.object) end
+end)
+
+addEvent('redirect:Dead', true)
+addEventHandler('redirect:Dead', root, function()
+    outputChatBox('Gidilcek yer sec ibne')
+    exports['html_spawn']:interface()
+
 end)
